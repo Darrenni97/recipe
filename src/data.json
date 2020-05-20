@@ -1,0 +1,106 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Best Avocado Toast in the World",
+      "description": "This is a recipe for the best tasting avocado toast in the world. It is rich in healthy fats from the avacados and protein from the poached egg.",
+      "serves": "1 person",
+      "imageUrl": "assets/avocado-toast.jpg",
+      "ingredients": [
+        {
+          "amount": "1 whole",
+          "name": "egg"
+        },
+        {
+          "amount": "2 slices",
+          "name": "bread"
+        },
+        {
+          "amount": "1 whole",
+          "name": "avocado"
+        }
+      ],
+      "instructions": [
+        "toast slices of bread",
+        "spread avocado on toast",
+        "poach egg in vinegar water",
+        "add poached egg on top of avocado toast"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cheese Pizza",
+      "description": "This was a recipe handed down to me by my grandmother Ruth who use to make the best cheese pizza.",
+      "serves": "4 people",
+      "imageUrl": "assets/cheese-pizza.jpg",
+      "ingredients": [
+        {
+          "amount": "1 package",
+          "name": "pizza dough"
+        },
+        {
+          "amount": "1 can",
+          "name": "pizza sauce"
+        },
+        {
+          "amount": "1/2 cup",
+          "name": "mozzarella cheese"
+        },
+        {
+          "amount": "50g",
+          "name": "olives"
+        },
+        {
+          "amount": "50g",
+          "name": "arugala"
+        }
+      ],
+      "instructions": [
+        "roll out pizza dough",
+        "spread pizza sauce on dough",
+        "sprinkle cheese, olives and arugala on top of dough",
+        "bake in the oven for 10mins at 350 degrees F"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Vegan Burrito Bowl",
+      "description": "I discovered this recipe when I went on a trip to Mexico. a nice lady taught me how to make world famous vegan burrito bowl",
+      "serves": "1 person",
+      "imageUrl": "assets/salad.jpg",
+      "ingredients": [
+        {
+          "amount": "1/2 cup",
+          "name": "red yeast rice"
+        },
+        {
+          "amount": "50g",
+          "name": "corn"
+        },
+        {
+          "amount": "50g",
+          "name": "olives"
+        },
+        {
+          "amount": "50g",
+          "name": "cucumbers"
+        },
+        {
+          "amount": "50g",
+          "name": "cherry tomatoes"
+        },
+        {
+          "amount": "50g",
+          "name": "brown beans"
+        }
+      ],
+      "instructions": [
+        "cook rice in rice cooker",
+        "boil beans until soft",
+        "cut up cherry tomatoes, cucumbers and olives into bite size pieces",
+        "put all the ingredients into a bowl/container",
+        "season with salt and pepper"
+      ]
+    }
+  ]
+}

@@ -23,4 +23,22 @@ export class RecipeService {
   public getRecipeById(id: number): Recipe {
     return _.find(this.recipes, (recipe) => recipe.id === id);
   }
+
+  public createRecipe(
+    title: string,
+    description: string,
+    serves: string,
+    imageUrl: string,
+    ingredients: IIngredient[],
+    instructions: string[]
+  ) {
+    const newRecipeData = {
+      id: this.getNextId(),
+    };
+  }
+
+  private getNextId(): number {
+    const max = _.maxBy(this.recipes, (recipe) => recipe.id);
+    return max.id + 1;
+  }
 }

@@ -7,5 +7,5 @@ export interface IRecipe {
   serves: string;
   imageUrl: string;
   ingredients: IIngredient[];
-  instruction: string[];
+  instructions: string[];
 }

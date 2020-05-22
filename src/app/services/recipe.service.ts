@@ -34,7 +34,18 @@ export class RecipeService {
   ) {
     const newRecipeData = {
       id: this.getNextId(),
+      title,
+      description,
+      serves,
+      imageUrl,
+      ingredients: [...ingredients],
+      instructions: [...instructions],
     };
+
+    const newRecipe = new Recipe(newRecipeData);
+
+    this.recipes.push(newRecipe);
+    return newRecipe;
   }
 
   private getNextId(): number {

@@ -19,4 +19,8 @@ export class RecipeService {
   public getRecipes(): Recipe[] {
     return this.recipes;
   }
+
+  public getRecipeById(id: number): Recipe {
+    return _.find(this.recipes, (recipe) => recipe.id === id);
+  }
 }

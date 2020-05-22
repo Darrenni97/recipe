@@ -50,8 +50,17 @@ export class RecipeService {
 
   public updateRecipe(recipe: Recipe): Recipe {
     const recipeIndex = _.findIndex(this.recipes, (r) => r.id === recipe.id);
+
     this.recipes[recipeIndex] = recipe;
     return recipe;
+  }
+
+  public deleteRecipe(id: number): void {
+    const recipeIndex = _.findIndex(this.recipes, (r) => r.id === id);
+
+    if (recipeIndex !== -1) {
+      this.recipes.splice(recipeIndex, 1);
+    }
   }
 
   private getNextId(): number {

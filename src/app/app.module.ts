@@ -14,7 +14,14 @@ import { NewRecipeComponent } from './pages/new-recipe/new-recipe.component';
 import { ShowRecipeComponent } from './pages/show-recipe/show-recipe.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, EditRecipeComponent, NewRecipeComponent, ShowRecipeComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    EditRecipeComponent,
+    NewRecipeComponent,
+    ShowRecipeComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [RecipeService],
   bootstrap: [AppComponent],

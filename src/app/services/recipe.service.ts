@@ -15,4 +15,8 @@ export class RecipeService {
       this.recipes.push(new Recipe(recipe));
     });
   }
+
+  public getRecipes(): Recipe[] {
+    return this.recipes;
+  }
 }

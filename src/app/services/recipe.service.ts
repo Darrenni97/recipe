@@ -48,6 +48,12 @@ export class RecipeService {
     return newRecipe;
   }
 
+  public updateRecipe(recipe: Recipe): Recipe {
+    const recipeIndex = _.findIndex(this.recipes, (r) => r.id === recipe.id);
+    this.recipes[recipeIndex] = recipe;
+    return recipe;
+  }
+
   private getNextId(): number {
     const max = _.maxBy(this.recipes, (recipe) => recipe.id);
     return max.id + 1;

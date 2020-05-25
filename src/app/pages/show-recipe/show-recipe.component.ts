@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Location } from '@angular/common';
@@ -10,8 +10,8 @@ import { Subscription } from 'rxjs';
   templateUrl: './show-recipe.component.html',
   styleUrls: ['./show-recipe.component.scss'],
 })
-export class ShowRecipeComponent implements OnInit {
-  private subcription: Subscription[] = [];
+export class ShowRecipeComponent implements OnInit, OnDestroy {
+  private subcriptions: Subscription[] = [];
   public recipe: Recipe;
 
   constructor(
@@ -22,11 +22,15 @@ export class ShowRecipeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.subcription.push(
+    this.subcriptions.push(
       this.route.paramMap.subscribe((params) => {
         const recipeId = params.get('id');
         this.recipe = this.recipeService.getRecipeById(parseInt(recipeId));
       })
     );
+  }
+
+  ngOnDestroy(): void {
+    this.subcriptions.forEach((sub) => sub.unsubscribe());
   }
 }

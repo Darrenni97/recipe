@@ -1,0 +1,11 @@
+.jumbotron {
+  background: url("/assets/food-background.jpeg");
+  background-size: cover;
+  border-radius: 0;
+}
+
+.jumbotron-heading,
+p.lead {
+  color: white;
+  text-shadow: 2px 2px 5px #000000;
+}

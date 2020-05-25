@@ -7,7 +7,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(recipeService: RecipeService) {}
+  constructor(public recipeService: RecipeService) {}
 
   ngOnInit(): void {}
 }

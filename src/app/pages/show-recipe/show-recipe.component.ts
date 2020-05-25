@@ -37,4 +37,9 @@ export class ShowRecipeComponent implements OnInit, OnDestroy {
   back() {
     this.location.back();
   }
+
+  deleteRecipe(): void {
+    this.recipeService.deleteRecipe(this.recipe.id);
+    this.router.navigate(['']);
+  }
 }

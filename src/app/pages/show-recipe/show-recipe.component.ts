@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RecipeService } from 'src/app/services/recipe.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-show-recipe',
@@ -6,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-recipe.component.scss'],
 })
 export class ShowRecipeComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private recipeService: RecipeService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {}
 }

@@ -33,4 +33,8 @@ export class ShowRecipeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subcriptions.forEach((sub) => sub.unsubscribe());
   }
+
+  back() {
+    this.location.back();
+  }
 }

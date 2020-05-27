@@ -45,6 +45,32 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
       instructions: this.fb.array([]),
       ingredients: this.fb.array([]),
     });
+
+    this.instructions = this.recipeForm.get('instructions') as FormArray;
+    this.ingredients = this.recipeForm.get('ingredients') as FormArray;
+
+    this.recipe.instructions.forEach((instruction) => {
+      this.instructions.push(this.createInstruction(instruction));
+    });
+
+    this.recipe.ingredients.forEach((ingredient) => {
+      this.ingredients.push(
+        this.createIngredient(ingredient.amount, ingredient.name)
+      );
+    });
+  }
+
+  private createInstruction(step: string): FormGroup {
+    return this.fb.group({
+      step: [step, [Validators.required]],
+    });
+  }
+
+  private createIngredient(amount: string, name: string): FormGroup {
+    return this.fb.group({
+      amount: [amount, [Validators.required]],
+      name: [name, [Validators.required]],
+    });
   }
 
   back() {

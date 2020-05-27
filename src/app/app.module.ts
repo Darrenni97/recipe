@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //services
 import { RecipeService } from './services/recipe.service';
@@ -22,7 +23,7 @@ import { ShowRecipeComponent } from './pages/show-recipe/show-recipe.component';
     NewRecipeComponent,
     ShowRecipeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [RecipeService],
   bootstrap: [AppComponent],
 })

@@ -73,6 +73,24 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
     });
   }
 
+  addInstruction(): void {
+    this.instructions.push(this.createInstruction(''));
+  }
+
+  addIngredient(): void {
+    this.ingredients.push(this.createIngredient('', ''));
+  }
+
+  deleteInstuction(index: number): void {
+    const arrayControl = this.recipeForm.controls['instructions'] as FormArray;
+    arrayControl.removeAt(index);
+  }
+
+  deleteIngredient(index: number): void {
+    const arrayControl = this.recipeForm.controls['ingredients'] as FormArray;
+    arrayControl.removeAt(index);
+  }
+
   back() {
     this.location.back();
   }

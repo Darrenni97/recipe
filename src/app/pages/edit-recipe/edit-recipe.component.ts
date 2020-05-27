@@ -31,8 +31,24 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
       this.route.paramMap.subscribe((params) => {
         const recipeId = params.get('id');
         this.recipe = this.recipeService.getRecipeById(parseInt(recipeId));
+        this.createForm();
       })
     );
+  }
+
+  private createForm(): void {
+    this.recipeForm = this.fb.group({
+      title: [this.recipe.title, [Validators.required]],
+      description: [this.recipe.description, [Validators.required]],
+      serves: [this.recipe.serves, [Validators.required]],
+      imageUrl: [this.recipe.imageUrl, [Validators.required]],
+      instructions: this.fb.array([]),
+      ingredients: this.fb.array([]),
+    });
+  }
+
+  back() {
+    this.location.back();
   }
 
   ngOnDestroy(): void {

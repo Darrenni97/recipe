@@ -91,6 +91,36 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
     arrayControl.removeAt(index);
   }
 
+  submitForm(): void {
+    if (this.recipeForm.valid) {
+      const {
+        title,
+        description,
+        serves,
+        imageUrl,
+        ingredients,
+        instructions,
+      } = this.recipeForm.value;
+      const filteredInstructions = instructions.map((item) => item.step);
+      const val = this.recipeService.updateRecipe(
+        new Recipe({
+          id: this.recipe.id,
+          title,
+          description,
+          serves,
+          imageUrl,
+          ingredients,
+          instructions: filteredInstructions,
+        })
+      );
+
+      this.router.navigate(['/recipes/${this.recipe.id}']);
+    } else {
+      //else show an alert
+      console.log('Form Error');
+    }
+  }
+
   back() {
     this.location.back();
   }

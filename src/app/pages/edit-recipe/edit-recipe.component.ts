@@ -18,9 +18,22 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
   private ingredients: FormArray;
   public recipeForm: FormGroup;
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private recipeService: RecipeService,
+    private location: Location,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subscriptions.push(
+      this.route.paramMap.subscribe((params) => {
+        const recipeId = params.get('id');
+        this.recipe = this.recipeService.getRecipeById(parseInt(recipeId));
+      })
+    );
+  }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach((sub) => sub.unsubscribe());

@@ -116,7 +116,7 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
 
       this.router.navigate([`/recipes/${this.recipe.id}`]);
     } else {
-      //else show an alert
+      // else show an alert
       console.log('Form Error');
     }
   }

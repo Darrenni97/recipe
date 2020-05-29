@@ -38,10 +38,10 @@ export class NewRecipeComponent implements OnInit, OnDestroy {
 
   private createForm(): void {
     this.recipeForm = this.fb.group({
-      title: [this.recipe.title, [Validators.required]],
-      description: [this.recipe.description, [Validators.required]],
-      serves: [this.recipe.serves, [Validators.required]],
-      imageUrl: [this.recipe.imageUrl, [Validators.required]],
+      title: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      serves: ['', [Validators.required]],
+      imageUrl: ['', [Validators.required]],
       instructions: this.fb.array([]),
       ingredients: this.fb.array([]),
     });
@@ -49,15 +49,8 @@ export class NewRecipeComponent implements OnInit, OnDestroy {
     this.instructions = this.recipeForm.get('instructions') as FormArray;
     this.ingredients = this.recipeForm.get('ingredients') as FormArray;
 
-    this.recipe.instructions.forEach((instruction) => {
-      this.instructions.push(this.createInstruction(instruction));
-    });
-
-    this.recipe.ingredients.forEach((ingredient) => {
-      this.ingredients.push(
-        this.createIngredient(ingredient.amount, ingredient.name)
-      );
-    });
+    this.addInstruction();
+    this.addIngredient();
   }
 
   private createInstruction(step: string): FormGroup {
@@ -111,7 +104,7 @@ export class NewRecipeComponent implements OnInit, OnDestroy {
         filteredInstructions
       );
 
-      this.router.navigate([`/recipes/${this.recipe.id}`]);
+      this.router.navigate(['']);
     } else {
       // else show an alert
       console.log('Form Error');

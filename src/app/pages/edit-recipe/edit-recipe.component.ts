@@ -13,7 +13,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditRecipeComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
-  private recipe: Recipe;
+  public recipe: Recipe;
   private instructions: FormArray;
   private ingredients: FormArray;
   public recipeForm: FormGroup;
@@ -102,7 +102,7 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
         instructions,
       } = this.recipeForm.value;
       const filteredInstructions = instructions.map((item) => item.step);
-      const val = this.recipeService.updateRecipe(
+      this.recipeService.updateRecipe(
         new Recipe({
           id: this.recipe.id,
           title,
@@ -114,7 +114,7 @@ export class EditRecipeComponent implements OnInit, OnDestroy {
         })
       );
 
-      this.router.navigate(['/recipes/${this.recipe.id}']);
+      this.router.navigate([`/recipes/${this.recipe.id}`]);
     } else {
       //else show an alert
       console.log('Form Error');

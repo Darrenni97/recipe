@@ -1,5 +1,14 @@
 # Recipe
 
+This is a simple recipe builder where users can create new recipes. Recipe information can be edited and delete. Purpose of this project was to learn about Typescript and Angular.
+
+## Snippets
+
+![Homepage](https://github.com/Darrenni97/recipe/blob/master/screenshots/homepage.png?raw=true)
+![New Recipe](https://github.com/Darrenni97/recipe/blob/master/screenshots/new-recipe.png?raw=true)
+![Recipe Info](https://github.com/Darrenni97/recipe/blob/master/screenshots/recipe-info.png?raw=true)
+![Edit Recipe](https://github.com/Darrenni97/recipe/blob/master/screenshots/edit-recipe.png?raw=true)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
 ## Development server
